@@ -1,5 +1,5 @@
 const SHEET_ID = '1Kzyw80HAzGYzX_wZcAaxo09hQQK18GXxGpRYX0RPdGc';
-const API_KEY = 'AIzaSyAqFla7Wyn2nks0NUbYVnoMyG1k0Lmau9o'; // Вставте ваш API ключ
+const API_KEY = 'api'; // Вставте ваш API ключ
 const SHEET_NAME = 'admin_mini_chat_test';
 
 export const saveNotesToSheet = async (sessionId, stage, notes) => {
