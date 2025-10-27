@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { saveNotesToSheet, loadNotesFromSheet } from './googleSheets';
+
 
 function App() {
   const [selectedStage, setSelectedStage] = useState('');
@@ -54,17 +54,6 @@ function App() {
     }
   }, [selectedUuid, selectedStage]);
 
-  useEffect(() => {
-    if (selectedUuid) {
-      loadNotesFromSheet(selectedUuid).then(loadedNotes => {
-        setNotes(loadedNotes);
-      });
-    } else {
-      setNotes('');
-    }
-  }, [selectedUuid]);
-    
-
   const fetchUuidList = async (stage) => {
     setLoading(true);
     try {
@@ -118,16 +107,7 @@ function App() {
     }
   };
 
-  const handleSaveNotes = async () => {
-    if (selectedUuid && selectedStage) {
-      const success = await saveNotesToSheet(selectedUuid, selectedStage, notes);
-      if (success) {
-        alert('Нотатки збережено!');
-      } else {
-        alert('Помилка збереження');
-      }
-    }
-  };
+ 
 
   return (
     <div className="min-h-screen bg-gray-100 p-6">
@@ -273,13 +253,6 @@ function App() {
               placeholder="tags"
               className="w-full flex-1 px-4 py-3 border border-gray-300 rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
             />
-            <button
-            onClick={handleSaveNotes}
-            disabled={!selectedUuid || !selectedStage}
-            className="mt-4 w-full px-4 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700 disabled:bg-gray-300 disabled:cursor-not-allowed"
-            >
-              Save Notes
-            </button>
           </div>
         </div>
       </div>
