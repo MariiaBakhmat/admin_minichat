@@ -17,17 +17,17 @@ function App() {
     dev: {
       sessionListEndpoint: 'https://i6mgrbyn65.eu-central-1.awsapprunner.com/api/v1/chat/session_list',
       historyEndpoint: 'https://i6mgrbyn65.eu-central-1.awsapprunner.com/api/v1/chat/history',
-      secret: 'amTYMNtgg9ISPXM8kNQmK0pcBSaQuOYA'
+      secret: 'AkH5abZfRc1ZB2wbjOlmoSOKsAtQrAxd'
     },
     test: {
       sessionListEndpoint: 'https://t8xz32qhxw.eu-central-1.awsapprunner.com/api/v1/chat/session_list',
       historyEndpoint: 'https://t8xz32qhxw.eu-central-1.awsapprunner.com/api/v1/chat/history',
-      secret: 'amTYMNtgg9ISPXM8kNQmK0pcBSaQuOYA'
+      secret: 'NaJlvxteMqcnbznt5kvKpIlNNimostjj'
     },
     prod: {
       sessionListEndpoint: 'https://mq44vzczer.eu-central-1.awsapprunner.com/api/v1/chat/session_list',
       historyEndpoint: 'https://mq44vzczer.eu-central-1.awsapprunner.com/api/v1/chat/history',
-      secret: 'amTYMNtgg9ISPXM8kNQmK0pcBSaQuOYA'
+      secret: 'P1sbus4FsLiKDM70sIWo2fTkt8IzF7oR'
     }
   };
 
