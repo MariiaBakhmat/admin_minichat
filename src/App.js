@@ -27,7 +27,7 @@ function App() {
     prod: {
       sessionListEndpoint: 'https://mq44vzczer.eu-central-1.awsapprunner.com/api/v1/chat/session_list',
       historyEndpoint: 'https://mq44vzczer.eu-central-1.awsapprunner.com/api/v1/chat/history',
-      secret: 'P1sbus4FsLiKDM70sIWo2fTkt8IzF7oR'
+      secret: 'amTYMNtgg9ISPXM8kNQmK0pcBSaQuOYA'
     }
   };
 
