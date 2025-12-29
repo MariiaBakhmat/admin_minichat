@@ -208,6 +208,7 @@ return (
                         } ${
                           feedbacks[messageId] ? 'hover:ring-2 hover:ring-yellow-400' : ''
                         }`}
+                        onMouseEnter={(e) => handleMouseEnter(messageId, e)}
                       >
                         <div className="text-xs opacity-75 mb-2">
                           {new Date(message.messageCreatedAt).toLocaleString('uk-UA', {
