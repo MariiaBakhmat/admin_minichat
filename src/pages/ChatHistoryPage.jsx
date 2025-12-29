@@ -65,6 +65,20 @@ useEffect(() => {
   }
 }, [selectedUuid, selectedStage]);
 
+// Закриття tooltip при кліку поза ним
+useEffect(() => {
+  const handleClickOutside = (event) => {
+    if (hoveredMessageId && !event.target.closest('.tooltip-container') && !event.target.closest('.message-box')) {
+      setHoveredMessageId(null);
+    }
+  };
+
+  document.addEventListener('mousedown', handleClickOutside);
+  return () => {
+    document.removeEventListener('mousedown', handleClickOutside);
+  };
+}, [hoveredMessageId]);
+
 const fetchUuidList = async (stage) => {
   setLoading(true);
   try {
@@ -154,14 +168,6 @@ const handleMouseEnter = (messageId, event) => {
   }
 };
 
-const handleMouseLeave = (event) => {
-  const relatedTarget = event.relatedTarget;
-  if (relatedTarget && relatedTarget.closest('.tooltip-container')) {
-    return;
-  }
-  setHoveredMessageId(null);
-};
-
 const copyToClipboard = (text) => {
   navigator.clipboard.writeText(text).then(() => {
     alert('Коментар скопійовано!');
@@ -193,10 +199,9 @@ return (
                       key={index} 
                       className={`flex ${message.sender === 'bot' ? 'justify-start' : 'justify-end'}`}
                       onMouseEnter={(e) => handleMouseEnter(messageId, e)}
-                      onMouseLeave={handleMouseLeave}
                     >
                       <div 
-                        className={`max-w-[70%] p-4 rounded-lg shadow cursor-pointer transition-all ${
+                        className={`message-box max-w-[70%] p-4 rounded-lg shadow cursor-pointer transition-all ${
                           message.sender === 'bot' 
                             ? 'bg-teal-100 text-gray-800' 
                             : 'bg-blue-500 text-white'
@@ -230,7 +235,6 @@ return (
               <div 
                 className="tooltip-container fixed z-50 bg-white border-2 border-gray-300 rounded-lg shadow-xl p-4 max-w-md"
                 onMouseEnter={() => setHoveredMessageId(hoveredMessageId)}
-                onMouseLeave={() => setHoveredMessageId(null)}
                 style={{
                   left: `${tooltipPosition.x}px`,
                   top: `${tooltipPosition.y - 10}px`,
