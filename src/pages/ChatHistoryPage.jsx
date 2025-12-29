@@ -28,9 +28,9 @@ function App() {
       secret: 'NaJlvxteMqcnbznt5kvKpIlNNimostjj'
     },
     pre_prod: {
-      sessionListEndpoint: 'https://6atwcmucjm.eu-central-1.awsapprunner.com/api/v1/chat/session_list',
-      historyEndpoint: 'https://6atwcmucjm.eu-central-1.awsapprunner.com/api/v1/chat/history',
-      feedbacksEndpoint: 'https://6atwcmucjm.eu-central-1.awsapprunner.com/api/v1/chat/sessions',
+      sessionListEndpoint: 'https://bm7smtjw9s.eu-central-1.awsapprunner.com/api/v1/chat/session_list',
+      historyEndpoint: 'https://bm7smtjw9s.eu-central-1.awsapprunner.com/api/v1/chat/history',
+      feedbacksEndpoint: 'https://bm7smtjw9s.eu-central-1.awsapprunner.com/api/v1/chat/sessions',
       secret: 'AkH5abZfRc1ZB2wbjOlmoSOKsAtQrAxd'
     },
     prod: {
